@@ -1,0 +1,26 @@
+if __name__ == '__main__':
+    N = int(input())  # Number of commands
+    lst = []          # Initialize empty list
+
+    for _ in range(N):
+        command = input().split()  # Read each command
+        cmd_type = command[0]      # First word is command name
+
+        if cmd_type == "insert":
+            index = int(command[1])
+            value = int(command[2])
+            lst.insert(index, value)
+        elif cmd_type == "print":
+            print(lst)
+        elif cmd_type == "remove":
+            value = int(command[1])
+            lst.remove(value)
+        elif cmd_type == "append":
+            value = int(command[1])
+            lst.append(value)
+        elif cmd_type == "sort":
+            lst.sort()
+        elif cmd_type == "pop":
+            lst.pop()
+        elif cmd_type == "reverse":
+            lst.reverse()
